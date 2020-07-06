@@ -1,0 +1,22 @@
+{
+  "name": "try-willet",
+  "version": "0.0.1",
+  "description": "A webpage for trying the Willet Programming Language.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jasongilman/try-willet.git"
+  },
+  "keywords": [
+    "willet"
+  ],
+  "author": "Jason Gilman",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jasongilman/try-willet/issues"
+  },
+  "homepage": "https://github.com/jasongilman/try-willet#readme"
+}
