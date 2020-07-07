@@ -1,29 +1,64 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+
 <head>
-<title>ACE in Action</title>
-<style type="text/css" media="screen">
-    #editor {
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
+  <meta charset="utf-8">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet"
+        href="dist/bootstrap.min.css"
+        crossorigin="anonymous">
+
+  <!-- TODO put this in a file -->
+  <style type="text/css" media="screen">
+    html,body {
+      height:100%;
+      margin: 0px;
+    }
+    .container-fluid {
+      display: flex;
+      flex-flow: column;
+      height: 100%;
+    }
+    .fill-height {
+        flex-grow: 1;
     }
 </style>
+
+  <title>Try Willet</title>
 </head>
+
 <body>
+  <div class="container-fluid">
+    <h1>Try Willet</h1>
+  <!-- TODO link to Willet Programming Language github and to this repo. -->
 
-<div id="editor">const foo = #(items) => {
-    const x = "All this is syntax highlighted"
-    x
-}</div>
+  <div class="row fill-height">
+    <div class="col-sm fill-height" id="editor">const foo = #(items) => {
+        const x = "All this is syntax highlighted"
+        x
+    }</div>
+    <div class="col-sm fill-height" id="output">
+      text here
+    </div>
+  </div>
+</div>
 
-<script src="ace-builds/src-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
-<script>
-    var editor = ace.edit("editor");
-    editor.setTheme("ace/theme/monokai");
-    editor.session.setMode("ace/mode/willet");
-</script>
+
+  <script src="dist/jquery.slim.min.js"
+          crossorigin="anonymous"></script>
+  <script src="dist/popper.min.js"
+          crossorigin="anonymous"></script>
+  <script src="dist/bootstrap.min.js"
+          crossorigin="anonymous"></script>
+  <script src="dist/ace.js" type="text/javascript" charset="utf-8"></script>
+  <!-- TODO put this in a file -->
+  <script>
+      var editor = ace.edit("editor");
+      editor.setTheme("ace/theme/monokai");
+      editor.session.setMode("ace/mode/willet");
+      var outputEditor = ace.edit("output");
+      outputEditor.setTheme("ace/theme/monokai");
+  </script>
 </body>
 </html>
