@@ -1,17 +1,14 @@
 const willetCompile = require('willet/lib/compiler');
 
-// TODO setup eslint
+// File generated at build time.
+const examples = require('./generated_examples').examples;
+
+const helloWorldExample = examples.filter((e) => e.exampleName === '1 hello world')[0];
 
 const compile = (code) => {
   const context = willetCompile.createContext();
   return willetCompile.compile(context, code);
 };
-
-const sampleCode = `const foo = #(items) => {
-  const x = "All this is syntax highlighted"
-  x
-}
-foo()`;
 
 const createCompileAndRun = (editor, outputEditor) => () => {
   const willetCode = editor.session.doc.getValue();
@@ -39,6 +36,17 @@ const createCompileAndRun = (editor, outputEditor) => () => {
   outputEditor.session.doc.setValue(result);
 };
 
+const setupCodeExamples = (editor) => {
+  const menuDiv = $('#addCodeExamplesDropDown > div.dropdown-menu');
+  for (const { contents, exampleName } of examples) {
+    const child = $(`<a class="dropdown-item" href="#">${exampleName}</a>`);
+    menuDiv.append(child);
+    child.click(() => {
+      editor.session.doc.setValue(contents);
+    });
+  }
+};
+
 const main = () => {
   // Initialize tooltips
   $('[data-toggle="tooltip"]').tooltip();
@@ -47,7 +55,7 @@ const main = () => {
   editor.setTheme("ace/theme/monokai");
   editor.session.setMode("ace/mode/willet");
 
-  editor.session.doc.setValue(sampleCode);
+  editor.session.doc.setValue(helloWorldExample.contents);
 
   const outputEditor = ace.edit("output");
   outputEditor.setTheme("ace/theme/monokai");
@@ -63,6 +71,8 @@ const main = () => {
     exec: compileAndRun,
     readOnly: true // false if this command should not apply in readOnly mode
   });
+
+  setupCodeExamples(editor);
 
   // Tie run button to compile and run
   $('#runButton').click(compileAndRun);

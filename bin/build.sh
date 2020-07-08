@@ -3,6 +3,11 @@
 mkdir -p dist/
 cp index.html dist/
 
+node bin/generate_examples.js
+if [ $? != 0 ]; then
+  printf "Failed generating examples"
+  exit 1
+fi
 
 browserify src/main.js -o dist/bundle.js
 if [ $? != 0 ]; then

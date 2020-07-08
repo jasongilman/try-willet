@@ -9,7 +9,6 @@
         href="dist/bootstrap.min.css"
         crossorigin="anonymous">
 
-  <!-- TODO put this in a file -->
   <style type="text/css" media="screen">
     html,body {
       height:100%;
@@ -21,7 +20,15 @@
       height: 100%;
     }
     .fill-height {
-        flex-grow: 1;
+      flex-grow: 1;
+    }
+    .wlt-btn-icon {
+      margin-bottom: 2px;
+      margin-left: -4px;
+      margin-right: -2px;
+    }
+    .nav-item {
+      margin-left: 10px;
     }
   </style>
   <title>Try Willet</title>
@@ -31,31 +38,53 @@
   <div class="container-fluid">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <a class="navbar-brand" href="#">Try Willet</a>
-
-      <a
-        id="runButton"
-        class="btn btn-primary"
-        href="#"
-        role="button"
-        data-toggle="tooltip"
-        data-placement="bottom"
-        title="Win: Ctrl-Enter Mac: Cmd-Enter">
-        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-play-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-          <path d="M11.596 8.697l-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z"/>
-        </svg>
-        Run
-      </a>
-
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link" href="https://github.com/jasongilman/willet-lang" target="_blank">Willet Home</a>
+            <a
+              id="runButton"
+              class="btn btn-primary btn-labeled"
+              href="#"
+              role="button"
+              data-toggle="tooltip"
+              data-placement="bottom"
+              title="Win: Ctrl-Enter Mac: Cmd-Enter">
+              <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-play-fill wlt-btn-icon" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path d="M11.596 8.697l-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z"/>
+              </svg>
+              Run
+            </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="https://github.com/jasongilman/willet-lang/blob/master/language_docs.md" target="_blank">Docs</a>
+            <div class="dropdown" id="addCodeExamplesDropDown">
+              <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Code Examples
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <!-- Children dynamically appended -->
+              </div>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://github.com/jasongilman/willet-lang" target="_blank">
+              <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-box-arrow-up-right wlt-btn-icon" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M1.5 13A1.5 1.5 0 0 0 3 14.5h8a1.5 1.5 0 0 0 1.5-1.5V9a.5.5 0 0 0-1 0v4a.5.5 0 0 1-.5.5H3a.5.5 0 0 1-.5-.5V5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 0 0-1H3A1.5 1.5 0 0 0 1.5 5v8zm7-11a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 .5.5v5a.5.5 0 0 1-1 0V2.5H9a.5.5 0 0 1-.5-.5z"/>
+                <path fill-rule="evenodd" d="M14.354 1.646a.5.5 0 0 1 0 .708l-8 8a.5.5 0 0 1-.708-.708l8-8a.5.5 0 0 1 .708 0z"/>
+              </svg>
+              Willet Home
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://github.com/jasongilman/willet-lang/blob/master/language_docs.md" target="_blank">
+              <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-box-arrow-up-right wlt-btn-icon" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M1.5 13A1.5 1.5 0 0 0 3 14.5h8a1.5 1.5 0 0 0 1.5-1.5V9a.5.5 0 0 0-1 0v4a.5.5 0 0 1-.5.5H3a.5.5 0 0 1-.5-.5V5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 0 0-1H3A1.5 1.5 0 0 0 1.5 5v8zm7-11a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 .5.5v5a.5.5 0 0 1-1 0V2.5H9a.5.5 0 0 1-.5-.5z"/>
+                <path fill-rule="evenodd" d="M14.354 1.646a.5.5 0 0 1 0 .708l-8 8a.5.5 0 0 1-.708-.708l8-8a.5.5 0 0 1 .708 0z"/>
+              </svg>
+              Docs
+            </a>
           </li>
         </ul>
       </div>
@@ -66,9 +95,7 @@
 
   <div class="row fill-height">
     <div class="col-sm fill-height" id="editor"></div>
-    <div class="col-sm fill-height" id="output">
-      "Output is sent here"
-    </div>
+    <div class="col-sm fill-height" id="output">"Click run to see output."</div>
   </div>
 </div>
 
