@@ -3,6 +3,9 @@
 mkdir -p dist/
 cp index.html dist/
 
+
+browserify src/main.js -o dist/bundle.js
+
 cp ace-builds/src-noconflict/ace.js dist/
 cp ace-builds/src-noconflict/theme-monokai.js dist/
 cp ace-builds/src-noconflict/mode-willet.js dist/

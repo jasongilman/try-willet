@@ -34,10 +34,7 @@
   <!-- TODO link to Willet Programming Language github and to this repo. -->
 
   <div class="row fill-height">
-    <div class="col-sm fill-height" id="editor">const foo = #(items) => {
-        const x = "All this is syntax highlighted"
-        x
-    }</div>
+    <div class="col-sm fill-height" id="editor"></div>
     <div class="col-sm fill-height" id="output">
       text here
     </div>
@@ -52,13 +49,12 @@
   <script src="dist/bootstrap.min.js"
           crossorigin="anonymous"></script>
   <script src="dist/ace.js" type="text/javascript" charset="utf-8"></script>
-  <!-- TODO put this in a file -->
+  <script src="dist/bundle.js" type="text/javascript" charset="utf-8"></script>
+  <!-- TODO copy this if needed to dist -->
+  <!-- <script src="node_modules/immutable/dist/immutable.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="dist/willet-core.js" type="text/javascript" charset="utf-8"></script> -->
   <script>
-      var editor = ace.edit("editor");
-      editor.setTheme("ace/theme/monokai");
-      editor.session.setMode("ace/mode/willet");
-      var outputEditor = ace.edit("output");
-      outputEditor.setTheme("ace/theme/monokai");
+    main();
   </script>
 </body>
 </html>

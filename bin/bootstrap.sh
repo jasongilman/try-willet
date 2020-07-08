@@ -12,6 +12,12 @@ if [ $? != 0 ]; then
   exit 1
 fi
 
+npm install
+if [ $? != 0 ]; then
+  printf "npm install failure"
+  exit 1
+fi
+
 cd ace
 
 npm install
