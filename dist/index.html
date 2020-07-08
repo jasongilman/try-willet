@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet"
+        href="dist/bootstrap.min.css"
+        crossorigin="anonymous">
+
+  <!-- TODO put this in a file -->
+  <style type="text/css" media="screen">
+    html,body {
+      height:100%;
+      margin: 0px;
+    }
+    .container-fluid {
+      display: flex;
+      flex-flow: column;
+      height: 100%;
+    }
+    .fill-height {
+        flex-grow: 1;
+    }
+  </style>
+  <title>Try Willet</title>
+</head>
+
+<body>
+  <div class="container-fluid">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#">Try Willet</a>
+
+      <a
+        id="runButton"
+        class="btn btn-primary"
+        href="#"
+        role="button"
+        data-toggle="tooltip"
+        data-placement="bottom"
+        title="Win: Ctrl-Enter Mac: Cmd-Enter">
+        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-play-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+          <path d="M11.596 8.697l-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z"/>
+        </svg>
+        Run
+      </a>
+
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="https://github.com/jasongilman/willet-lang" target="_blank">Willet Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://github.com/jasongilman/willet-lang/blob/master/language_docs.md" target="_blank">Docs</a>
+          </li>
+        </ul>
+      </div>
+      <span class="navbar-text">
+        Willet Programming Language © 2020 Jason Gilman
+      </span>
+    </nav>
+
+  <div class="row fill-height">
+    <div class="col-sm fill-height" id="editor"></div>
+    <div class="col-sm fill-height" id="output">
+      "Output is sent here"
+    </div>
+  </div>
+</div>
+
+
+  <script src="dist/jquery.slim.min.js"
+          crossorigin="anonymous"></script>
+  <script src="dist/popper.min.js"
+          crossorigin="anonymous"></script>
+  <script src="dist/bootstrap.min.js"
+          crossorigin="anonymous"></script>
+  <script src="dist/ace.js" type="text/javascript" charset="utf-8"></script>
+  <script src="dist/bundle.js" type="text/javascript" charset="utf-8"></script>
+  <script>
+    main();
+  </script>
+</body>
+</html>
