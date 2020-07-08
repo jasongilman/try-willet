@@ -23,20 +23,48 @@
     .fill-height {
         flex-grow: 1;
     }
-</style>
-
+  </style>
   <title>Try Willet</title>
 </head>
 
 <body>
   <div class="container-fluid">
-    <h1>Try Willet</h1>
-  <!-- TODO link to Willet Programming Language github and to this repo. -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#">Try Willet</a>
+
+      <a
+        id="runButton"
+        class="btn btn-primary"
+        href="#"
+        role="button"
+        data-toggle="tooltip"
+        data-placement="bottom"
+        title="Win: Ctrl-Enter Mac: Cmd-Enter">
+        Run
+      </a>
+
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="https://github.com/jasongilman/willet-lang" target="_blank">Willet Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://github.com/jasongilman/willet-lang/blob/master/language_docs.md" target="_blank">Docs</a>
+          </li>
+        </ul>
+      </div>
+      <span class="navbar-text">
+        Willet Programming Language © 2020 Jason Gilman
+      </span>
+    </nav>
 
   <div class="row fill-height">
     <div class="col-sm fill-height" id="editor"></div>
     <div class="col-sm fill-height" id="output">
-      text here
+      "Output is sent here"
     </div>
   </div>
 </div>

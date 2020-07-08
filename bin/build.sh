@@ -5,10 +5,16 @@ cp index.html dist/
 
 
 browserify src/main.js -o dist/bundle.js
+if [ $? != 0 ]; then
+  printf "browserify failure"
+  exit 1
+fi
 
 cp ace-builds/src-noconflict/ace.js dist/
 cp ace-builds/src-noconflict/theme-monokai.js dist/
 cp ace-builds/src-noconflict/mode-willet.js dist/
+cp ace-builds/src-noconflict/mode-json.js dist/
+cp ace-builds/src-noconflict/worker-json.js dist/
 
 cp node_modules/bootstrap/dist/css/bootstrap.min.css* dist/
 cp node_modules/bootstrap/dist/js/bootstrap.min.js* dist/
