@@ -24,7 +24,7 @@
     "browserify": "^16.5.1",
     "jquery": "^3.5.1",
     "popper.js": "^1.16.1",
-    "willet": "0.0.1-alpha8"
+    "willet": "0.0.1-alpha10"
   },
   "devDependencies": {
     "http-server": "^0.12.3"
