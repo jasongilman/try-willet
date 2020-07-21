@@ -22,7 +22,7 @@ const evalAndCaptureLogs = async (code) => {
   try {
     result = eval(code)
 
-    if (result.then) {
+    if (result && result.then) {
       result = await result;
     }
     if (result === undefined) {
